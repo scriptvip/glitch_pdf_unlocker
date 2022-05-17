@@ -11,7 +11,7 @@ except ModuleNotFoundError:
             import pikepdf
         except ModuleNotFoundError:
             os.system("pip install pikepdf")
- import pikepdf
+import pikepdf
 from os.path import isfile, join
 from os import listdir
 #folder_path=On_Red+" Not Selected [!]  "
