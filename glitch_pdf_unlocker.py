@@ -2,8 +2,16 @@ import os
 try:
     import pikepdf
 except ModuleNotFoundError:
-    pip3 install pikepdf
-    pip install pikepdf
+    os.system("pip3 install pikepdf")
+    try:
+        import pikepdf
+    except ModuleNotFoundError:
+        os.system("pip2 install pikepdf")
+        try:
+            import pikepdf
+        except ModuleNotFoundError:
+            os.system("pip install pikepdf")
+ import pikepdf
 from os.path import isfile, join
 from os import listdir
 #folder_path=On_Red+" Not Selected [!]  "
@@ -42,6 +50,7 @@ def main():
             try:
                 print(Yellow+"     [🔒] "+f+Green+"  decrypted [✅] ")
                 print("  ")
+                f=files_path+"/"+f
                 pdf = pikepdf.open(f,allow_overwriting_input=True)
                 pdf.save(f)
                 continue
