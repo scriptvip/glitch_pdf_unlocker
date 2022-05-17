@@ -50,8 +50,9 @@ def main():
             try:
                 print(Yellow+"     [🔒] "+f+Green+"  decrypted [✅] ")
                 print("  ")
-                f=files_path+"/"+f
-                pdf = pikepdf.open(f,allow_overwriting_input=True)
+                file=files_path+"/"+f
+                pdf = pikepdf.open(file,allow_overwriting_input=True)
+                f=files_path+"/dec_"+f
                 pdf.save(f)
                 continue
             except FileNotFoundError:
